@@ -1,4 +1,5 @@
 import 'package:duty_free_allowance/calculator.dart';
+import 'package:duty_free_allowance/home.dart';
 import 'package:flutter/material.dart';
 import 'Allowance.dart';
 import 'items.dart';
@@ -30,7 +31,9 @@ class MenuState extends State<Menu> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-      //homepage return
+
+        return new LoginScreen3();
+
       case 1:
         return new Allowance();
       case 2:
