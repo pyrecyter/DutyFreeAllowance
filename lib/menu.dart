@@ -1,36 +1,78 @@
+import 'package:duty_free_allowance/calculator.dart';
 import 'package:flutter/material.dart';
+import 'Allowance.dart';
 
-class Menu extends StatelessWidget{
+class DrawerItem {
+  String title;
+  IconData icon;
+  DrawerItem(this.title, this.icon);
+}
+
+class Menu extends StatefulWidget {
+  final drawerItems = [
+    new DrawerItem("Home Page", Icons.home),
+    new DrawerItem("Allowance", Icons.credit_card),
+    new DrawerItem("Calculator", Icons.info)
+    //add here 1st
+  ];
+
   @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-    // Important: Remove any padding from the ListView.
-    padding: EdgeInsets.zero,
-    children: <Widget>[
-      DrawerHeader(
-        child: Text('Drawer Header'),
-        decoration: BoxDecoration(
-          color: Colors.blue,
-        ),
-      ),
-      ListTile(
-        title: Text('Item 1'),
-        onTap: () {
-          // Update the state of the app.
-          // ...
-        },
-      ),
-      ListTile(
-        title: Text('Item 2'),
-        onTap: () {
-          // Update the state of the app.
-          // ...
-        },
-      ),
-    ],
-  ),
-    );
+  State<StatefulWidget> createState() {
+    return new MenuState();
+  }
+}
+
+class MenuState extends State<Menu> {
+  int _selectedDrawerIndex = 0;
+
+  _getDrawerItemWidget(int pos) {
+    switch (pos) {
+      case 0:
+        //homepage return
+      case 1:
+        return new Allowance();
+      case 2:
+        return new Calculator();
+      //according to items add here
+      default:
+        return new Text("Error");
+    }
+  }
+  
+  _onSelectItem(int index) {
+    setState(() => _selectedDrawerIndex = index);
+    Navigator.of(context).pop();
   }
 
+  @override
+  Widget build(BuildContext context) {
+    var drawerOptions = <Widget>[];
+    for (var i = 0; i < widget.drawerItems.length; i++) {
+      var d = widget.drawerItems[i];
+      drawerOptions.add(
+        new ListTile(
+          leading: new Icon(d.icon),
+          title: new Text(d.title),
+          selected: i == _selectedDrawerIndex,
+          onTap: () => _onSelectItem(i),
+        )
+      );
+    }
+
+    return new Scaffold(
+      appBar: new AppBar(
+        title: new Text(widget.drawerItems[_selectedDrawerIndex].title),
+      ),
+      drawer: new Drawer(
+        child: new Column(
+          children: <Widget>[
+            new UserAccountsDrawerHeader(
+                accountName: new Text("SL Duty Free Allowance"), accountEmail: null),
+            new Column(children: drawerOptions)
+          ],
+        ),
+      ),
+      body: _getDrawerItemWidget(_selectedDrawerIndex),
+    );
+  }
 }
