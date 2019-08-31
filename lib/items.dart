@@ -1,31 +1,28 @@
 import 'package:flutter/material.dart';
 
-class items extends StatelessWidget {
+class Items extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
+    return DefaultTabController(
+        length: 2,
         child: Scaffold(
           appBar: AppBar(
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
-                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.do_not_disturb), text: "RESTRICTED",),
+                Tab(icon: Icon(Icons.done), text: "PERMITTED"),
               ],
             ),
-            title: Text('Tabs Demo'),
+            title: Text('LIST OF GOODS'),
           ),
           body: TabBarView(
             children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
+              Center( child: Text("Page 1")),
+              Center( child: Text("Page 2")),
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
