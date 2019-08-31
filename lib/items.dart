@@ -20,13 +20,13 @@ class Items extends StatelessWidget {
           title: Text('LIST OF GOODS'),
         ),
         body: TabBarView(
-          children: <Widget>[
-            (new ListTile(
-              leading: new MyBullet(),
-              title: new Text('My first line'),
-            )),
-            new ListTile(
-                leading: new MyBullet(), title: new Text('My second line')),
+          children: [
+            new ListView(
+              children: list,
+            ),
+            new ListView(
+              children: list,
+            ),
           ],
         ),
       ),
@@ -38,12 +38,55 @@ class MyBullet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Container(
-      height: 15.0,
-      width: 15.0,
+      height: 10.0,
+      width: 10.0,
       decoration: new BoxDecoration(
-        color: Colors.black,
-        shape: BoxShape.rectangle,
+        color: Colors.blue,
+        shape: BoxShape.circle,
       ),
     );
   }
 }
+
+List<Widget> list = <Widget>[
+  new ListTile(
+    title: new Text('Air Conditioner',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    leading: new MyBullet(),
+  ),
+  new ListTile(
+    title: new Text('Deep Freezer',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    leading: new MyBullet(),
+  ),
+  new ListTile(
+    title: new Text('Dish Washer',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    leading: new MyBullet(),
+  ),
+  new ListTile(
+    title: new Text('Electric Oven',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: new Text('Four burners'),
+    leading: new MyBullet(),
+  ),
+  new ListTile(
+    title: new Text('Refrigerator new/used CFC free',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: new Text('OVER 500 LTR'),
+    leading: new MyBullet(),
+  ),
+  new ListTile(
+    title: new Text('T.V CRT',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: new Text('OVER 29"'),
+    leading: new MyBullet(),
+  ),
+  new ListTile(
+    title: new Text('T.V LCD/LED/PLASMA',
+        style: new TextStyle(fontWeight: FontWeight.w500, fontSize: 20.0)),
+    subtitle: new Text('OVER 55"'),
+    leading: new MyBullet(),
+  ),
+];
+
