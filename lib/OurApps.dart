@@ -30,7 +30,6 @@ class OurApps extends StatelessWidget {
                     fontSize: 15.0,
                   ),
                 ),
-                
               ],
             )),
     Container(
