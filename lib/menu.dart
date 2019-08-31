@@ -1,6 +1,5 @@
 import 'package:duty_free_allowance/OurApps.dart';
 import 'package:duty_free_allowance/calculator.dart';
-import 'package:duty_free_allowance/login_screen_3.dart';
 import 'package:duty_free_allowance/moreapps.dart';
 import 'package:duty_free_allowance/home.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +17,7 @@ class Menu extends StatefulWidget {
     new DrawerItem("Home Page", Icons.home),
     new DrawerItem("Allowance", Icons.credit_card),
     new DrawerItem("Calculator", Icons.info),
-    new DrawerItem("More Apps", Icons.more)
+    new DrawerItem("More Apps", Icons.more),
     new DrawerItem("Items", Icons.list)
     //add here 1st
   ];
