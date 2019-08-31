@@ -1,6 +1,7 @@
 import 'package:duty_free_allowance/calculator.dart';
 import 'package:flutter/material.dart';
 import 'Allowance.dart';
+import 'items.dart';
 
 class DrawerItem {
   String title;
@@ -12,7 +13,8 @@ class Menu extends StatefulWidget {
   final drawerItems = [
     new DrawerItem("Home Page", Icons.home),
     new DrawerItem("Allowance", Icons.credit_card),
-    new DrawerItem("Calculator", Icons.info)
+    new DrawerItem("Calculator", Icons.info),
+    new DrawerItem("Items", Icons.list)
     //add here 1st
   ];
 
@@ -34,6 +36,9 @@ class MenuState extends State<Menu> {
       case 2:
         return new Calculator();
       //according to items add here
+      case 3:
+        return new Items();
+
       default:
         return new Text("Error");
     }
