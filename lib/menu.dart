@@ -1,4 +1,7 @@
+import 'package:duty_free_allowance/OurApps.dart';
 import 'package:duty_free_allowance/calculator.dart';
+import 'package:duty_free_allowance/login_screen_3.dart';
+import 'package:duty_free_allowance/moreapps.dart';
 import 'package:duty_free_allowance/home.dart';
 import 'package:flutter/material.dart';
 import 'Allowance.dart';
@@ -15,6 +18,7 @@ class Menu extends StatefulWidget {
     new DrawerItem("Home Page", Icons.home),
     new DrawerItem("Allowance", Icons.credit_card),
     new DrawerItem("Calculator", Icons.info),
+    new DrawerItem("More Apps", Icons.more)
     new DrawerItem("Items", Icons.list)
     //add here 1st
   ];
@@ -31,13 +35,13 @@ class MenuState extends State<Menu> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-
-        return new LoginScreen3();
-
+       return new LoginScreen3();
       case 1:
         return new Allowance();
       case 2:
         return new Calculator();
+        case 3: 
+        return new OurApps();
       //according to items add here
       case 3:
         return new Items();
