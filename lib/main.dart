@@ -8,11 +8,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SL Duty Free Allowance',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'SL Duty Free Allowance'),
     );
   }
 }
@@ -26,6 +26,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       drawer: Menu(),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         tooltip: 'Open Calculator',
         child: Icon(Icons.calendar_today),
       ), // This trailing comma makes auto-formatting nicer for build methods.
