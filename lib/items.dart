@@ -7,6 +7,7 @@ class Items extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xff0d47a1),
           bottom: TabBar(
             tabs: [
               Tab(
