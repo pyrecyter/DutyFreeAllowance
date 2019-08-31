@@ -42,7 +42,7 @@ class MenuState extends State<Menu> {
         case 3: 
         return new OurApps();
       //according to items add here
-      case 3:
+      case 4:
         return new Items();
 
       default:
