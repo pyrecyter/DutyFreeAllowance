@@ -1,4 +1,5 @@
 import 'package:duty_free_allowance/calculator.dart';
+import 'package:duty_free_allowance/home.dart';
 import 'package:flutter/material.dart';
 import 'Allowance.dart';
 import 'items.dart';
@@ -30,7 +31,9 @@ class MenuState extends State<Menu> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-        //homepage return
+
+        return new LoginScreen3();
+
       case 1:
         return new Allowance();
       case 2:
@@ -43,7 +46,7 @@ class MenuState extends State<Menu> {
         return new Text("Error");
     }
   }
-  
+
   _onSelectItem(int index) {
     setState(() => _selectedDrawerIndex = index);
     Navigator.of(context).pop();
@@ -54,14 +57,12 @@ class MenuState extends State<Menu> {
     var drawerOptions = <Widget>[];
     for (var i = 0; i < widget.drawerItems.length; i++) {
       var d = widget.drawerItems[i];
-      drawerOptions.add(
-        new ListTile(
-          leading: new Icon(d.icon),
-          title: new Text(d.title),
-          selected: i == _selectedDrawerIndex,
-          onTap: () => _onSelectItem(i),
-        )
-      );
+      drawerOptions.add(new ListTile(
+        leading: new Icon(d.icon),
+        title: new Text(d.title),
+        selected: i == _selectedDrawerIndex,
+        onTap: () => _onSelectItem(i),
+      ));
     }
 
     return new Scaffold(
@@ -71,8 +72,15 @@ class MenuState extends State<Menu> {
       drawer: new Drawer(
         child: new Column(
           children: <Widget>[
-            new UserAccountsDrawerHeader(
-                accountName: new Text("SL Duty Free Allowance"), accountEmail: null),
+            new DrawerHeader(
+              child: null,
+              decoration: new BoxDecoration(
+                image: new DecorationImage(
+                  image: new ExactAssetImage('assets/SLDFAlogo.png'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
             new Column(children: drawerOptions)
           ],
         ),
