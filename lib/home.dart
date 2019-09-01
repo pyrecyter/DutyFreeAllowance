@@ -8,112 +8,13 @@ class LoginScreen3 extends StatefulWidget {
 class _LoginScreen3State extends State<LoginScreen3>
     with TickerProviderStateMixin {
 
-  //The code is commented because instead of manual scrolling with animation,
-  //Now PageView is being used
-
-  /*double scrollPercent = 0.0;
-  Offset startDrag;
-  double startDragPercentScroll;
-  double dragDirection; // -1 for left, +1 for right
-
-  AnimationController controller_minus1To0;
-  AnimationController controller_0To1;
-  CurvedAnimation anim_minus1To0;
-  CurvedAnimation anim_0To1;
-
-  final numCards = 3;
-
-  void _onHorizontalDragStart(DragStartDetails details) {
-    startDrag = details.globalPosition;
-    startDragPercentScroll = scrollPercent;
-  }
-
-  void _onHorizontalDragUpdate(DragUpdateDetails details) {
-    final currDrag = details.globalPosition;
-    final dragDistance = currDrag.dx - startDrag.dx;
-    if (dragDistance > 0) {
-      dragDirection = 1.0;
-    } else {
-      dragDirection = -1.0;
-    }
-    final singleCardDragPercent = dragDistance / context.size.width;
-
-    setState(() {
-      scrollPercent =
-          (startDragPercentScroll + (-singleCardDragPercent / numCards))
-              .clamp(0.0 - (1 / numCards), (1 / numCards));
-      print(scrollPercent);
-    });
-  }
-
-  void _onHorizontalDragEnd(DragEndDetails details) {
-    if (scrollPercent > 0.1666) {
-      print("FIRST CASE");
-      controller_0To1.forward(from: scrollPercent * numCards);
-    } else if (scrollPercent < 0.1666 &&
-        scrollPercent > -0.1666 &&
-        dragDirection == -1.0) {
-      print("SECOND CASE");
-      controller_0To1.reverse(from: scrollPercent * numCards);
-    } else if (scrollPercent < 0.1666 &&
-        scrollPercent > -0.1666 &&
-        dragDirection == 1.0) {
-      print("THIRD CASE");
-      controller_minus1To0.forward(from: scrollPercent * numCards);
-    } else if (scrollPercent < -0.1666) {
-      print("LAST CASE");
-      controller_minus1To0.reverse(from: scrollPercent * numCards);
-    }
-
-    setState(() {
-      startDrag = null;
-      startDragPercentScroll = null;
-    });
-  }
-  */
+  
 
   @override
   void initState() {
     super.initState();
 
-    //The code is commented because instead of manual scrolling with animation,
-    //Now PageView is being used
-
-    /*
-    controller_minus1To0 = new AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-      lowerBound: -1.0,
-      upperBound: 0.0,
-    );
-    controller_0To1 = new AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 500),
-      lowerBound: 0.0,
-      upperBound: 1.0,
-    );
-
-    anim_minus1To0 = new CurvedAnimation(
-      parent: controller_minus1To0,
-      curve: Interval(0.10, 0.90, curve: Curves.bounceInOut),
-    );
-    anim_0To1 = new CurvedAnimation(
-      parent: controller_0To1,
-      curve: Interval(0.10, 0.90, curve: Curves.bounceInOut),
-    );
-
-    anim_0To1.addListener(() {
-      scrollPercent = controller_0To1.value / numCards;
-//      print(scrollPercent);
-      setState(() {});
-    });
-
-    anim_minus1To0.addListener(() {
-      scrollPercent = controller_minus1To0.value / numCards;
-//      print(scrollPercent);
-      setState(() {});
-    });
-    */
+    
   }
 
   Widget homePage() {
@@ -354,7 +255,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   gotoLogin() {
     //controller_0To1.forward(from: 0.0);
     _controller.animateToPage(
-      0,
+      1,
       duration: Duration(milliseconds: 800),
       curve: Curves.bounceOut,
     );
@@ -375,28 +276,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   Widget build(BuildContext context) {
     return Container(
         height: MediaQuery.of(context).size.height,
-    //  child: new GestureDetector(
-    //    onHorizontalDragStart: _onHorizontalDragStart,
-    //    onHorizontalDragUpdate: _onHorizontalDragUpdate,
-    //    onHorizontalDragEnd: _onHorizontalDragEnd,
-    //    behavior: HitTestBehavior.translucent,
-    //    child: Stack(
-    //      children: <Widget>[
-    //        new FractionalTranslation(
-    //          translation: Offset(-1 - (scrollPercent / (1 / numCards)), 0.0),
-    //          child: SignupPage(),
-    //        ),
-    //        new FractionalTranslation(
-    //          translation: Offset(0 - (scrollPercent / (1 / numCards)), 0.0),
-    //          child: HomePage(),
-    //        ),
-    //        new FractionalTranslation(
-    //          translation: Offset(1 - (scrollPercent / (1 / numCards)), 0.0),
-    //          child: LoginPage(),
-    //        ),
-    //      ],
-    //    ),
-    //  ),
+    
         child: PageView(
           controller: _controller,
           physics: new AlwaysScrollableScrollPhysics(),
