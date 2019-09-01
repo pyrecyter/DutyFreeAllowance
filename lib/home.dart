@@ -74,7 +74,7 @@ class _LoginScreen3State extends State<LoginScreen3>
                     shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0)),
                     color: Colors.white,
-                    onPressed: () => gotoLogin(), //Put allowance route here 
+                    onPressed: () {}, 
                     child: new Container(
                       padding: const EdgeInsets.symmetric(
                         vertical: 20.0,
