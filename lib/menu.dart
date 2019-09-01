@@ -87,11 +87,7 @@ class MenuState extends State<Menu> {
           ],
         ),
       ),
-      body:PageView(
-          controller: _controller,
-          physics: new AlwaysScrollableScrollPhysics(),
-          children: <Widget>[ _getDrawerItemWidget(_selectedDrawerIndex),],
-          scrollDirection: Axis.horizontal,
-        )); 
+      body:_getDrawerItemWidget(_selectedDrawerIndex)
+        ); 
   }
 }
