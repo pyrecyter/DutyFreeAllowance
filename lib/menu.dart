@@ -12,7 +12,7 @@ class DrawerItem {
 
 class Menu extends StatefulWidget {
   final drawerItems = [
-    new DrawerItem("Home Page", Icons.home),
+    new DrawerItem("SL DutyFree Allowance", Icons.home),
     new DrawerItem("Allowance", Icons.credit_card),
     new DrawerItem("Calculator", Icons.info),
     new DrawerItem("Items", Icons.list)
