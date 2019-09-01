@@ -77,9 +77,10 @@ class MenuState extends State<Menu> {
             new DrawerHeader(
               child: null,
               decoration: new BoxDecoration(
+                color: Colors.blueAccent,
                 image: new DecorationImage(
                   image: new ExactAssetImage('assets/SLDFAlogo.png'),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
             ),
