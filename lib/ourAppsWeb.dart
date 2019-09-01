@@ -6,7 +6,7 @@ class OurAppsWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     WebViewController _controller;
     return WebView(
-        initialUrl: 'https://google.com',
+        initialUrl: 'https://www.google.com',
         onWebViewCreated: (WebViewController webViewController) {
           _controller = webViewController;
         });
