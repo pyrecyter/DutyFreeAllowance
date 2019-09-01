@@ -302,7 +302,7 @@ class _LoginScreen3State extends State<LoginScreen3>
                               "Our Website",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.redAccent,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
@@ -332,7 +332,7 @@ class _LoginScreen3State extends State<LoginScreen3>
                               "More Apps",
                               textAlign: TextAlign.center,
                               style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.redAccent,
                                   fontWeight: FontWeight.bold),
                             ),
                           ),
