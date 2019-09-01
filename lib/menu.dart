@@ -1,6 +1,5 @@
 import 'package:duty_free_allowance/OurApps.dart';
 import 'package:duty_free_allowance/calculator.dart';
-import 'package:duty_free_allowance/moreapps.dart';
 import 'package:duty_free_allowance/home.dart';
 import 'package:flutter/material.dart';
 import 'Allowance.dart';
@@ -14,7 +13,7 @@ class DrawerItem {
 
 class Menu extends StatefulWidget {
   final drawerItems = [
-    new DrawerItem("Home Page", Icons.home),
+    new DrawerItem("SL DutyFree Allowance", Icons.home),
     new DrawerItem("Allowance", Icons.credit_card),
     new DrawerItem("Calculator", Icons.info),
     new DrawerItem("More Apps", Icons.more),
@@ -49,7 +48,7 @@ class MenuState extends State<Menu> {
         return new Text("Error");
     }
   }
-
+ PageController _controller = new PageController(initialPage: 1, viewportFraction: 1.0);
   _onSelectItem(int index) {
     setState(() => _selectedDrawerIndex = index);
     Navigator.of(context).pop();
@@ -88,7 +87,11 @@ class MenuState extends State<Menu> {
           ],
         ),
       ),
-      body: _getDrawerItemWidget(_selectedDrawerIndex),
-    );
+      body:PageView(
+          controller: _controller,
+          physics: new AlwaysScrollableScrollPhysics(),
+          children: <Widget>[ _getDrawerItemWidget(_selectedDrawerIndex),],
+          scrollDirection: Axis.horizontal,
+        )); 
   }
 }
