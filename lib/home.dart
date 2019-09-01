@@ -143,7 +143,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   }
    Widget aboutusPage() {
    return  Container(  decoration: BoxDecoration(
-        color: Colors.redAccent,
+        color: Colors.blueAccent,
         image: DecorationImage(
           colorFilter: new ColorFilter.mode(
               Colors.black.withOpacity(0.1), BlendMode.dstATop),
