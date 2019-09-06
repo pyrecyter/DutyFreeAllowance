@@ -77,9 +77,10 @@ class MenuState extends State<Menu> {
             new DrawerHeader(
               child: null,
               decoration: new BoxDecoration(
+                color: Colors.blueAccent,
                 image: new DecorationImage(
                   image: new ExactAssetImage('assets/SLDFAlogo.png'),
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fitHeight,
                 ),
               ),
             ),
@@ -87,11 +88,7 @@ class MenuState extends State<Menu> {
           ],
         ),
       ),
-      body:PageView(
-          controller: _controller,
-          physics: new AlwaysScrollableScrollPhysics(),
-          children: <Widget>[ _getDrawerItemWidget(_selectedDrawerIndex),],
-          scrollDirection: Axis.horizontal,
-        )); 
+      body:_getDrawerItemWidget(_selectedDrawerIndex)
+        ); 
   }
 }
