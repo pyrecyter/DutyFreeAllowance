@@ -1,4 +1,4 @@
-import 'package:duty_free_allowance/ourAppsWeb.dart';
+import 'package:duty_free_allowance/moreapps.dart';
 import 'package:flutter/material.dart';
 
 class OurApps extends StatefulWidget {
@@ -86,7 +86,7 @@ class Screen extends State<OurApps> {
   _checkStat(int i) {
     switch (i) {
       case 1:
-        return OurAppsWeb();
+        return MoreApps();
       default:
         return mainScreen();
     }
