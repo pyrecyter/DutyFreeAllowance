@@ -26,12 +26,14 @@ class Menu extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return new MenuState();
+    return new MenuState(0);
   }
 }
 
 class MenuState extends State<Menu> {
   int _selectedDrawerIndex = 0;
+
+  MenuState(this._selectedDrawerIndex);
 
   _getDrawerItemWidget(int pos) {
     switch (pos) {
@@ -40,7 +42,7 @@ class MenuState extends State<Menu> {
       case 1:
         return new Allowance();
       case 2:
-        return new Calculator();
+        return Calculator();
         case 3: 
         return new OurApps();
       case 4:
