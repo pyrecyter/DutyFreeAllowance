@@ -19,7 +19,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   homePage() {
     return new Container(
       decoration: BoxDecoration(
-        color: Colors.deepPurple,
+        color: Colors.grey,
         image: DecorationImage(
           colorFilter: new ColorFilter.mode(
               Colors.black.withOpacity(0.1), BlendMode.dstATop),
@@ -145,7 +145,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   Widget aboutusPage() {
     return Container(
         decoration: BoxDecoration(
-          color: Colors.deepPurple,
+          color: Colors.grey,
           image: DecorationImage(
             colorFilter: new ColorFilter.mode(
                 Colors.black.withOpacity(0.1), BlendMode.dstATop),
