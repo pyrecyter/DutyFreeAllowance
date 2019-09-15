@@ -1,6 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Allowance extends StatelessWidget {
+class Allowance extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return AllowanceState();
+  }
+
+}
+
+class AllowanceState extends State {
+
+  double cata1,cata2,cata3,catb1,catb2,catb3;
+
+Future<List<String>> getFavorites() async {
+    DocumentSnapshot querySnapshot = await Firestore.instance
+        .collection('users')
+        .document('cat_a')
+        .get();
+    if (querySnapshot.exists &&
+        querySnapshot.data.containsKey('a') ) {
+      // Create a new List<String> from List<dynamic>
+      return List<String>.from(querySnapshot.data['a']);
+    }
+    return [];
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -19,7 +45,7 @@ class Allowance extends StatelessWidget {
                 width: 1000,
                 padding: EdgeInsets.all(10),
               ),
-              color: Colors.blue),
+              color: Colors.purple),
           DataTable(
             columns:[ DataColumn(label: Text('Category'),),DataColumn(label: Text('Days'),),DataColumn(label: Text('Allowance'),),
             ], 
@@ -48,7 +74,7 @@ class Allowance extends StatelessWidget {
                 width: 1000,
                 padding: EdgeInsets.all(10),
               ),
-              color: Colors.blue),
+              color: Colors.purple),
           DataTable(
             columns:[ DataColumn(label: Text('Category'),),DataColumn(label: Text('Days'),),DataColumn(label: Text('Allowance'),),
             ], 
@@ -77,7 +103,7 @@ class Allowance extends StatelessWidget {
                 width: 1000,
                 padding: EdgeInsets.all(10),
               ),
-              color: Colors.blue),
+              color: Colors.purple),
           DataTable(
             columns:[ DataColumn(label: Text('Days'),),DataColumn(label: Text('SL Purchase'),),DataColumn(label: Text('Abroad Purchase'),),
             ], 

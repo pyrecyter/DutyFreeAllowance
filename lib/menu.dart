@@ -6,7 +6,6 @@ import 'Allowance.dart';
 import 'items.dart';
 import 'package:duty_free_allowance/slcustomsweb.dart';
 
-
 class DrawerItem {
   String title;
   IconData icon;
@@ -38,12 +37,12 @@ class MenuState extends State<Menu> {
   _getDrawerItemWidget(int pos) {
     switch (pos) {
       case 0:
-       return new LoginScreen3();
+        return new LoginScreen3();
       case 1:
         return new Allowance();
       case 2:
-        return Calculator();
-        case 3: 
+        return new Calculator();
+      case 3:
         return new OurApps();
       case 4:
         return new Items();
@@ -54,7 +53,9 @@ class MenuState extends State<Menu> {
         return new Text("Error");
     }
   }
- PageController _controller = new PageController(initialPage: 1, viewportFraction: 1.0);
+
+  PageController _controller =
+      new PageController(initialPage: 1, viewportFraction: 1.0);
   _onSelectItem(int index) {
     setState(() => _selectedDrawerIndex = index);
     Navigator.of(context).pop();
@@ -73,28 +74,30 @@ class MenuState extends State<Menu> {
       ));
     }
 
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text(widget.drawerItems[_selectedDrawerIndex].title),
-      ),
-      drawer: new Drawer(
-        child: new Column(
-          children: <Widget>[
-            new DrawerHeader(
-              child: null,
-              decoration: new BoxDecoration(
-                color: Colors.blueAccent,
-                image: new DecorationImage(
-                  image: new ExactAssetImage('assets/SLDFAlogo.png'),
-                  fit: BoxFit.fitHeight,
+        appBar: new AppBar(
+          title: new Text(widget.drawerItems[_selectedDrawerIndex].title),
+        ),
+        drawer: new Drawer(
+          child: new Column(
+            children: <Widget>[
+              new DrawerHeader(
+                child: null,
+                decoration: new BoxDecoration(
+                  color: Colors.purple,
+                  image: new DecorationImage(
+                    image: new ExactAssetImage('assets/SLDFAlogo.png'),
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
               ),
-            ),
-            new Column(children: drawerOptions)
-          ],
+              new Column(children: drawerOptions)
+            ],
+          ),
         ),
-      ),
-      body:_getDrawerItemWidget(_selectedDrawerIndex)
-        ); 
+        body: Container(width: width, height: height, child:_getDrawerItemWidget(_selectedDrawerIndex)),);
   }
 }

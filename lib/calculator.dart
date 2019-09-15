@@ -25,12 +25,7 @@ class _CalculatorState extends State<Calculator> {
 		super.initState();
 	}
 
-	@override
-	void dispose() {
-		KeyController.dispose();
-		Processor.dispose();
-		super.dispose();
-	}
+  
 
 	@override
 	Widget build(BuildContext context) {
