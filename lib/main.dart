@@ -1,5 +1,7 @@
 import 'package:duty_free_allowance/menu.dart';
+import 'package:duty_free_allowance/routing_constant.dart';
 import 'package:flutter/material.dart';
+import 'router.dart' as router;
 
 void main() => runApp(MyApp());
 
@@ -9,6 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SL Duty Free Allowance',
+      onGenerateRoute: router.generateRoute,
+      initialRoute: HomeViewRoute,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
