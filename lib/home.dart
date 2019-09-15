@@ -73,7 +73,7 @@ class _LoginScreen3State extends State<LoginScreen3>
                         borderRadius: new BorderRadius.circular(30.0)),
                     color: Colors.white,
                     onPressed: () {
-                      Navigator.pushNamed(context, AllowanceViewRoute);
+                      Navigator.pushNamed(context, ItemRoute);
                     },
                     child: new Container(
                       padding: const EdgeInsets.symmetric(
@@ -85,7 +85,7 @@ class _LoginScreen3State extends State<LoginScreen3>
                         children: <Widget>[
                           new Expanded(
                             child: Text(
-                              "ALLOWANCE",
+                              "ALLOWANCE ITEM",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   color: Colors.black,
