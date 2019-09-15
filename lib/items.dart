@@ -7,7 +7,7 @@ class Items extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xff0d47a1),
+          backgroundColor: Colors.deepPurple,
           bottom: TabBar(
             tabs: [
               Tab(
@@ -225,7 +225,7 @@ class MyBullet extends StatelessWidget {
       height: 10.0,
       width: 10.0,
       decoration: new BoxDecoration(
-        color: Colors.blue,
+        color: Colors.deepPurple,
         shape: BoxShape.circle,
       ),
     );

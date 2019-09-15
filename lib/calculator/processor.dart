@@ -10,7 +10,7 @@ abstract class Processor {
 	static String _valB = '0';
 	static String _result;
 
-	static StreamController _controller = StreamController();
+	static StreamController _controller = StreamController.broadcast();
 	static Stream get _stream => _controller.stream;
 
 	static StreamSubscription listen(Function handler) => _stream.listen(handler);

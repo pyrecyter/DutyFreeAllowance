@@ -19,7 +19,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   homePage() {
     return new Container(
       decoration: BoxDecoration(
-        color: Colors.blueAccent,
+        color: Colors.grey,
         image: DecorationImage(
           colorFilter: new ColorFilter.mode(
               Colors.black.withOpacity(0.1), BlendMode.dstATop),
@@ -110,7 +110,7 @@ class _LoginScreen3State extends State<LoginScreen3>
                   child: new FlatButton(
                     shape: new RoundedRectangleBorder(
                         borderRadius: new BorderRadius.circular(30.0)),
-                    color: Colors.redAccent,
+                    color: Colors.red,
                     onPressed: () => gotoLogin(),
                     child: new Container(
                       padding: const EdgeInsets.symmetric(
@@ -145,7 +145,7 @@ class _LoginScreen3State extends State<LoginScreen3>
   Widget aboutusPage() {
     return Container(
         decoration: BoxDecoration(
-          color: Colors.blueAccent,
+          color: Colors.grey,
           image: DecorationImage(
             colorFilter: new ColorFilter.mode(
                 Colors.black.withOpacity(0.1), BlendMode.dstATop),

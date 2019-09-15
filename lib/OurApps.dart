@@ -14,7 +14,7 @@ class Screen extends State<OurApps> {
   mainScreen() {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.blueAccent,
+        color: Colors.grey,
         image: DecorationImage(
           colorFilter: new ColorFilter.mode(
               Colors.black.withOpacity(0.1), BlendMode.dstATop),

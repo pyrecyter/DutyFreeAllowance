@@ -5,8 +5,17 @@ import 'router.dart' as router;
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+
+}
+
+class MyAppState extends State {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -14,7 +23,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: router.generateRoute,
       initialRoute: HomeViewRoute,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       home: MyHomePage(title: 'SL Duty Free Allowance'),
     );
